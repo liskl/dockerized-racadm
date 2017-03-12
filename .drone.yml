@@ -13,7 +13,7 @@ pipeline:
     secret_key: ${AWS_SECRET_ACCESS_KEY}
     repo: ${AWS_ECR_REPO}/util/dockerized-racadm
     tags:
-      - ${DRONE_BRANCH/master/latest}
+      - latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     volumes:
       - /Users/llisk/.aws:/root/.aws
