@@ -8,14 +8,14 @@ pipeline:
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
 
-#publish:
-#  ecr:
-#    image: plugins/ecr
-#    access_key: "${AWS_ACCESS_KEY_ID}"
-#    secret_key: "${AWS_SECRET_ACCESS_KEY}"
-#    repo: "${AWS_ECR_REPO}/util/dockerized-racadm"
-#    tags:
-#      - "latest"
-#      - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
+publish:
+  ecr:
+    image: plugins/ecr
+    access_key: "${AWS_ACCESS_KEY_ID}"
+    secret_key: "${AWS_SECRET_ACCESS_KEY}"
+    repo: "${AWS_ECR_REPO}/util/dockerized-racadm"
+    tags:
+      - "latest"
+      - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
 #    volumes:
 #      - /Users/llisk/.aws:/root/.aws
