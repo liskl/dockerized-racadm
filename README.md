@@ -14,4 +14,3 @@ docker run -it <imagename> -r 192.168.30.XXX -u root -p ${LOM_PASSWD} help
 docker run -it <imagename> -r 192.168.30.XXX -u root -p ${LOM_PASSWD} getsysinfo | grep "NIC1 Ethernet
 
 and tons more
-
