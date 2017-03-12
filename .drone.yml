@@ -7,8 +7,6 @@ pipeline:
       - ${DRONE_BRANCH/master/latest}
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
-
-publish:
   ecr:
     image: plugins/ecr
     access_key: "${AWS_ACCESS_KEY_ID}"
