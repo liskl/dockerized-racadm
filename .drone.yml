@@ -1,20 +1,21 @@
 pipeline:
   docker:
     image: plugins/docker
+    registry: registry.liskl.com
     repo: registry.liskl.com/llisk/dockerized-racadm
     tag:
       - ${DRONE_BRANCH/master/latest}
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
-    storage_driver: overlay
-publish:
-  ecr:
-    image: plugins/ecr
-    access_key: "${AWS_ACCESS_KEY_ID}"
-    secret_key: "${AWS_SECRET_ACCESS_KEY}"
-    repo: "${AWS_ECR_REPO}/util/dockerized-racadm"
-    tags:
-      - "latest"
-      - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
+
+#publish:
+#  ecr:
+#    image: plugins/ecr
+#    access_key: "${AWS_ACCESS_KEY_ID}"
+#    secret_key: "${AWS_SECRET_ACCESS_KEY}"
+#    repo: "${AWS_ECR_REPO}/util/dockerized-racadm"
+#    tags:
+#      - "latest"
+#      - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
 #    volumes:
 #      - /Users/llisk/.aws:/root/.aws
