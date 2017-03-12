@@ -1,4 +1,7 @@
 pipeline:
+  build:
+    commands:
+      aws ecr get-login --region us-east-1
   docker:
     image: plugins/docker
     repo: registry.liskl.com/llisk/dockerized-racadm
@@ -7,8 +10,6 @@ pipeline:
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
     storage_driver: overlay
-    commands:
-      aws ecr get-login --region us-east-1
   ecr:
     image: plugins/ecr
     access_key: ${AWS_ACCESS_KEY_ID}
