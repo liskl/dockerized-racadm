@@ -15,8 +15,6 @@ pipeline:
     tags:
       - "latest"
       - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
-    volumes:
-      - /Users/llisk/.aws:/root/.aws
-environment:
-  - AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
-  - AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+    environment:
+      - AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+      - AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
