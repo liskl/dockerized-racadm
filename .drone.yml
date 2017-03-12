@@ -13,4 +13,6 @@ pipeline:
     access_key: ${AWS_ACCESS_KEY_ID}
     secret_key: ${AWS_SECRET_ACCESS_KEY}
     repo: ${AWS_ECR_REPO}/util/dockerized-racadm
-    tags: latest
+    tags:
+      - ${DRONE_BRANCH/master/latest}
+      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
