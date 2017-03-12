@@ -12,9 +12,9 @@ pipeline:
     access_key: ${AWS_ACCESS_KEY_ID}
     secret_key: ${AWS_SECRET_ACCESS_KEY}
     repo: "${AWS_ECR_REPO}"
-    tags:
-      - "latest"
-      - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
+    #    tags:
+    #  - "latest"
+    #  - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
     environment:
       - AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
       - AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
