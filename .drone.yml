@@ -1,4 +1,9 @@
 pipeline:
+
+  build:
+    commands:
+      export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
   docker:
     image: plugins/docker
     repo: registry.liskl.com/llisk/dockerized-racadm
@@ -7,10 +12,9 @@ pipeline:
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
     storage_driver: overlay
-
   ecr:
     image: plugins/ecr
-    access_key: ${AWS_ECR_ID}
-    secret_key: ${AWS_ECR_KEY}
+    access_key: ${AWS_ACCESS_KEY_ID}
+    secret_key: ${AWS_SECRET_ACCESS_KEY}
     repo: ${AWS_ECR_REPO}/util/dockerized-racadm
     tags: latest
