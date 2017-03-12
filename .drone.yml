@@ -1,9 +1,6 @@
 pipeline:
   auth:
     image: scottlackey/drone-auth-ecr
-    auth_config:
-      username: ${DOCKER_REGISTRY_USERNAME}
-      password: ${DOCKER_REGISTRY_PASSWORD}
     commands:
       - aws ecr get-login --region us-east-1
     volumes:
