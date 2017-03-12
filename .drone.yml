@@ -9,11 +9,11 @@ pipeline:
     force_tag: true
   ecr:
     image: plugins/ecr
-    access_key: "${AWS_ACCESS_KEY_ID}"
-    secret_key: "${AWS_SECRET_ACCESS_KEY}"
+    access_key: ${AWS_ACCESS_KEY_ID}
+    secret_key: ${AWS_SECRET_ACCESS_KEY}
     repo: "${AWS_ECR_REPO}"
     tags:
       - "latest"
       - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
-#    volumes:
-#      - /Users/llisk/.aws:/root/.aws
+    volumes:
+      - /Users/llisk/.aws:/root/.aws
