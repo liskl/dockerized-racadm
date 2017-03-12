@@ -13,6 +13,5 @@ pipeline:
     secret_key: ${AWS_ECR_KEY}
     region: us-east-1
     insecure: true
-    registry: registry.tstllc.net
     repo: ${AWS_ECR_REPO}
 
