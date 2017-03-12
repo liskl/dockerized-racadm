@@ -8,12 +8,9 @@ pipeline:
     force_tag: true
     storage_driver: overlay
 
-plugin:
-  name: ECR
-  desc: Build and publish images to a AWS ECR
-  type: publish
-  image: plugins/ecr
+  ecr:
+    image: plugins/ecr
     access_key: ${AWS_ECR_ID}
     secret_key: ${AWS_ECR_KEY}
-    repo: ${AWS_ECR_REPO}
-
+    repo: ${AWS_ECR_REPO}/util/dockerized-racadm
+    tags: latest
