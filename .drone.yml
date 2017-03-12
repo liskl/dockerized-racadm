@@ -1,5 +1,7 @@
 pipeline:
-
+  build:
+    commands:
+      aws ecr get-login --region us-east-1
   docker:
     image: plugins/docker
     repo: registry.liskl.com/llisk/dockerized-racadm
