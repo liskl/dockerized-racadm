@@ -9,8 +9,8 @@ pipeline:
     force_tag: true
   ecr:
     image: plugins/ecr
-    ACCESS_KEY: ${AWS_ACCESS_KEY_ID}
-    SECRET_KEY: ${AWS_SECRET_ACCESS_KEY}
+    access_key: ${AWS_ACCESS_KEY_ID}
+    secret_key: ${AWS_SECRET_ACCESS_KEY}
     repo: 945362765384.dkr.ecr.us-east-1.amazonaws.com/util/dockerized-racadm
     region: us-east-1
     tags:
