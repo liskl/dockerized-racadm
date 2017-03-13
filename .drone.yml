@@ -11,7 +11,8 @@ pipeline:
     image: plugins/ecr
     access_key: "${AWS_ACCESS_KEY_ID}"
     secret_key: "${AWS_SECRET_ACCESS_KEY}"
-    repo: 945362765384.dkr.ecr.us-east-1.amazonaws.com/util/dockerized-racadm
+#    repo: 945362765384.dkr.ecr.us-east-1.amazonaws.com/util/dockerized-racadm
+    repo: registry.tstllc.net/util/dockerized-racadm
     tags:
       - "latest"
       - "${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}"
