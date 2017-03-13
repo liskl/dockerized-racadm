@@ -11,7 +11,7 @@ pipeline:
     image: plugins/ecr
     access_key: ${AWS_ACCESS_KEY_ID}
     secret_key: ${AWS_SECRET_ACCESS_KEY}
-    repo: 945362765384.dkr.ecr.us-east-1.amazonaws.com/util/dockerized-racadm
+    repo: 945362765384.dkr.ecr.us-east-1.amazonaws.com/util/${DRONE_REPO_NAME}
     region: us-east-1
     tags:
       - latest
