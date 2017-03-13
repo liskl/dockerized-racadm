@@ -5,7 +5,7 @@ pipeline:
     repo: registry.liskl.com/llisk/dockerized-racadm
     tag:
       - ${DRONE_BRANCH/master/latest}
-      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+      - ${DRONE_BRANCH}.build-${DRONE_COMMIT_SHA:0:8}
     force_tag: true
   ecr:
     image: plugins/ecr
@@ -15,4 +15,4 @@ pipeline:
     region: us-east-1
     tags:
       - latest
-      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+      - ${DRONE_BRANCH}.build-${DRONE_COMMIT_SHA:0:8}
