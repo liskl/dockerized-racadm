@@ -16,3 +16,4 @@ pipeline:
     tags:
       - latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+
